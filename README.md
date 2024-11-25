@@ -289,7 +289,7 @@ To prepare accelerometer signals for training, a series of preprocessing steps w
 | **Weighted Average**    | 0.26          | 0.40       | 0.28         | 72          |
 
 
-![LSTM Confusion Matrix](output_graphs/lstm_confusion:matrix.png)
+![LSTM Confusion Matrix](output_graphs/lstm_confusion_matrix.png)
 
 ### Audio Recognition
 
@@ -361,12 +361,12 @@ To prepare accelerometer signals for training, a series of preprocessing steps w
 │   requirements.txt
 │   .gitignore
 │   README.md
-│   
+│
 ├───data
 │   ├───mathematical_operations
 │   │   │   info.labels
 │   │   │   README.txt
-│   │   │   
+│   │   │
 │   │   ├───testing
 │   │   │       division1.wav
 │   │   │       division2.wav
@@ -576,6 +576,14 @@ To prepare accelerometer signals for training, a series of preprocessing steps w
         lstm_training_loss.png
         sample_waveform.png
         sample_spectrogram.png
+        rnn_confusion_matrix.png
+        cnn_confusion_matrix.png
+        lstm_confusion_matrix.png
+        mlp_confusion_matrix.png
+        model2.png
+        model1.png
+        model2_confusion_matrix.png
+        model1_confusion_matrix.png
 ```
 
 ## How to Run
