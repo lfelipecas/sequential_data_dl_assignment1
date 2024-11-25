@@ -192,23 +192,154 @@ To prepare accelerometer signals for training, a series of preprocessing steps w
 ## Results
 
 ### Human Activity Recognition
-**Model Performance**:
+
+**Training Performance**:
+- **MLP**: 81.75% Accuracy, Loss = 0.3379
+![MLP Training Loss](output_graphs/mlp_training_loss.png)
+- **CNN**: 100% Accuracy, Loss = 8.4885e-04
+![CNN Training Loss](output_graphs/cnn_training_loss.png)
+- **RNN**: 44.57% Accuracy, Loss = 1.1386
+![CNN Training Loss](output_graphs/rnn_training_loss.png)
+- **LSTM**: 32.25% Accuracy, Loss = 1.4961
+![LSTM Training Loss](output_graphs/lstm_training_loss.png)
+
+**Testing Performance**:
+
 - **MLP**: 84.72% Accuracy, Loss = 0.3054
+
+#### MLP Classification Report
+
+| **Class**               | **Precision** | **Recall** | **F1-Score** | **Support** |
+|-------------------------|---------------|------------|--------------|-------------|
+| Agitar a los lados      | 1.00          | 1.00       | 1.00         | 12          |
+| Agitar arriba-abajo     | 1.00          | 0.75       | 0.86         | 12          |
+| Brincar                 | 0.88          | 0.58       | 0.70         | 12          |
+| Caminar                 | 0.71          | 1.00       | 0.83         | 12          |
+| Círculos                | 0.71          | 1.00       | 0.83         | 12          |
+| Trotar                  | 1.00          | 0.75       | 0.86         | 12          |
+
+| **Overall Metrics**     |               |            |              |             |
+|-------------------------|---------------|------------|--------------|-------------|
+| **Accuracy**            |               |            | 0.85         | 72          |
+| **Macro Average**       | 0.88          | 0.85       | 0.84         | 72          |
+| **Weighted Average**    | 0.88          | 0.85       | 0.84         | 72          |
+
+
+![MLP Confusion Matrix](output_graphs/mlp_confusion_matrix.png)
+
 - **CNN**: 97.22% Accuracy, Loss = 0.0731
+
+#### CNN Classification Report
+
+| **Class**               | **Precision** | **Recall** | **F1-Score** | **Support** |
+|-------------------------|---------------|------------|--------------|-------------|
+| Agitar a los lados      | 1.00          | 1.00       | 1.00         | 12          |
+| Agitar arriba-abajo     | 1.00          | 1.00       | 1.00         | 12          |
+| Brincar                 | 0.92          | 1.00       | 0.96         | 12          |
+| Caminar                 | 1.00          | 1.00       | 1.00         | 12          |
+| Círculos                | 0.92          | 1.00       | 0.96         | 12          |
+| Trotar                  | 1.00          | 0.83       | 0.91         | 12          |
+
+| **Overall Metrics**     |               |            |              |             |
+|-------------------------|---------------|------------|--------------|-------------|
+| **Accuracy**            |               |            | 0.97         | 72          |
+| **Macro Average**       | 0.97          | 0.97       | 0.97         | 72          |
+| **Weighted Average**    | 0.97          | 0.97       | 0.97         | 72          |
+
+![CNN Confusion Matrix](output_graphs/cnn_confusion_matrix.png)
+
 - **RNN**: 40.28% Accuracy, Loss = 1.0988
+
+#### RNN Classification Report
+
+| **Class**               | **Precision** | **Recall** | **F1-Score** | **Support** |
+|-------------------------|---------------|------------|--------------|-------------|
+| Agitar a los lados      | 0.71          | 0.42       | 0.53         | 12          |
+| Agitar arriba-abajo     | 0.44          | 1.00       | 0.62         | 12          |
+| Brincar                 | 0.00          | 0.00       | 0.00         | 12          |
+| Caminar                 | 0.38          | 1.00       | 0.55         | 12          |
+| Círculos                | 0.00          | 0.00       | 0.00         | 12          |
+| Trotar                  | 0.00          | 0.00       | 0.00         | 12          |
+
+| **Overall Metrics**     |               |            |              |             |
+|-------------------------|---------------|------------|--------------|-------------|
+| **Accuracy**            |               |            | 0.40         | 72          |
+| **Macro Average**       | 0.26          | 0.40       | 0.28         | 72          |
+| **Weighted Average**    | 0.26          | 0.40       | 0.28         | 72          |
+
+![CNN Confusion Matrix](output_graphs/cnn_confusion_matrix.png)
+
 - **LSTM**: 33.33% Accuracy, Loss = 1.4949
 
-**Confusion Matrices**:
-![MLP Confusion Matrix](output_graphs/mlp_training_loss.png)
-![CNN Confusion Matrix](output_graphs/cnn_training_loss.png)
-![RNN Confusion Matrix](output_graphs/rnn_training_loss.png)
-![LSTM Confusion Matrix](output_graphs/lstm_training_loss.png)
+#### RNN Classification Report
+
+| **Class**               | **Precision** | **Recall** | **F1-Score** | **Support** |
+|-------------------------|---------------|------------|--------------|-------------|
+| Agitar a los lados      | 0.71          | 0.42       | 0.53         | 12          |
+| Agitar arriba-abajo     | 0.44          | 1.00       | 0.62         | 12          |
+| Brincar                 | 0.00          | 0.00       | 0.00         | 12          |
+| Caminar                 | 0.38          | 1.00       | 0.55         | 12          |
+| Círculos                | 0.00          | 0.00       | 0.00         | 12          |
+| Trotar                  | 0.00          | 0.00       | 0.00         | 12          |
+
+| **Overall Metrics**     |               |            |              |             |
+|-------------------------|---------------|------------|--------------|-------------|
+| **Accuracy**            |               |            | 0.40         | 72          |
+| **Macro Average**       | 0.26          | 0.40       | 0.28         | 72          |
+| **Weighted Average**    | 0.26          | 0.40       | 0.28         | 72          |
+
+
+![LSTM Confusion Matrix](output_graphs/lstm_confusion:matrix.png)
 
 ### Audio Recognition
-- **CNN Accuracy**: 97.1%, Loss = 0.0673
 
-**Spectrogram Training Loss**:
-![Spectrogram Training Loss](output_graphs/sample_spectrogram.png)
+#### Performance Summary
+
+| **Model**  | **Training Accuracy** | **Training Loss** | **Testing Accuracy** | **Testing Loss** |
+|------------|-----------------------|-------------------|----------------------|------------------|
+| **Model 1**| 100%                  | 5.8083e-06        | 66.67%               | 2.0259           |
+| **Model 2**| 97.40%                | 1.4720            | 55.56%               | 11.5881          |
+
+![Model 1 Performance](output_graphs/model1.png)
+![Model 2 Performance](output_graphs/model2.png)
+
+##### Model 1 Classification Report
+
+| **Class**              | **Precision** | **Recall** | **F1-Score** | **Support** |
+|------------------------|---------------|------------|--------------|-------------|
+| Division               | 0.67          | 0.67       | 0.67         | 3           |
+| Multiplicación         | 1.00          | 0.67       | 0.80         | 3           |
+| Potenciación           | 1.00          | 0.67       | 0.80         | 3           |
+| Raíz cuadrada          | 1.00          | 1.00       | 1.00         | 3           |
+| Resta                  | 0.43          | 1.00       | 0.60         | 3           |
+| Suma                   | 0.00          | 0.00       | 0.00         | 3           |
+
+| **Overall Metrics**    |               |            |              |             |
+|------------------------|---------------|------------|--------------|-------------|
+| **Accuracy**           |               |            | 0.67         | 18          |
+| **Macro Average**      | 0.68          | 0.67       | 0.64         | 18          |
+| **Weighted Average**   | 0.68          | 0.67       | 0.64         | 18          |
+
+![Model 1 Confusion Matrix](output_graphs/model1_confusion_matrix.png)
+
+#### Model 2 Classification Report
+
+| **Class**              | **Precision** | **Recall** | **F1-Score** | **Support** |
+|------------------------|---------------|------------|--------------|-------------|
+| Division               | 0.67          | 0.67       | 0.67         | 3           |
+| Multiplicación         | 0.00          | 0.00       | 0.00         | 3           |
+| Potenciación           | 1.00          | 0.67       | 0.80         | 3           |
+| Raíz cuadrada          | 1.00          | 1.00       | 1.00         | 3           |
+| Resta                  | 0.38          | 1.00       | 0.55         | 3           |
+| Suma                   | 0.00          | 0.00       | 0.00         | 3           |
+
+| **Overall Metrics**    |               |            |              |             |
+|------------------------|---------------|------------|--------------|-------------|
+| **Accuracy**           |               |            | 0.56         | 18          |
+| **Macro Average**      | 0.51          | 0.56       | 0.50         | 18          |
+| **Weighted Average**   | 0.51          | 0.56       | 0.50         | 18          |
+
+![Model 2 Confusion Matrix](output_graphs/model2_confusion_matrix.png)
 
 ## Conclusions
 
