@@ -47,10 +47,6 @@ desktop.ini
 *.bak
 *.old
 
-# Output directories
-images/
-visualizations/
-
 # HTML files generated for visualizations
 *.html
 
