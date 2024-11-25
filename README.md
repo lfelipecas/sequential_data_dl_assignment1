@@ -130,20 +130,225 @@ Training was conducted for 60 epochs using cross-entropy loss and Adam optimizer
    - Investigate ensemble methods combining CNNs and RNNs for audio tasks.
 
 ## Repository Structure
-
 ```
+│   requirements.txt
+│   .gitignore
+│   README.md
+│   
 ├───data
-│ ├───mathematical_operations
-│ │ ├───testing
-│ │ └───training
-│ └───movements
-│ ├───testing
-│ └───training
+│   ├───mathematical_operations
+│   │   │   info.labels
+│   │   │   README.txt
+│   │   │   
+│   │   ├───testing
+│   │   │       division1.wav
+│   │   │       division2.wav
+│   │   │       division3.wav
+│   │   │       info1.labels
+│   │   │       multiplicacion1.wav
+│   │   │       multiplicacion2.wav
+│   │   │       multiplicacion3.wav
+│   │   │       potenciacion1.wav
+│   │   │       potenciacion2.wav
+│   │   │       potenciacion3.wav
+│   │   │       raizcuadrada1.wav
+│   │   │       raizcuadrada2.wav
+│   │   │       raizcuadrada3.wav
+│   │   │       resta1.wav
+│   │   │       resta2.wav
+│   │   │       resta3.wav
+│   │   │       suma1.wav
+│   │   │       suma2.wav
+│   │   │       suma3.wav
+│   │   │
+│   │   └───training
+│   │           division1.wav
+│   │           division2.wav
+│   │           division3.wav
+│   │           division4.wav
+│   │           division5.wav
+│   │           division6.wav
+│   │           division7.wav
+│   │           division8.wav
+│   │           division9.wav
+│   │           division10.wav
+│   │           division11.wav
+│   │           division12.wav
+│   │           division13.wav
+│   │           info1.labels
+│   │           multiplicacion1.wav
+│   │           multiplicacion2.wav
+│   │           multiplicacion3.wav
+│   │           multiplicacion4.wav
+│   │           multiplicacion5.wav
+│   │           multiplicacion6.wav
+│   │           multiplicacion7.wav
+│   │           multiplicacion8.wav
+│   │           multiplicacion9.wav
+│   │           multiplicacion10.wav
+│   │           multiplicacion11.wav
+│   │           multiplicacion12.wav
+│   │           multiplicacion13.wav
+│   │           potenciacion1.wav
+│   │           potenciacion2.wav
+│   │           potenciacion3.wav
+│   │           potenciacion4.wav
+│   │           potenciacion5.wav
+│   │           potenciacion6.wav
+│   │           potenciacion7.wav
+│   │           potenciacion8.wav
+│   │           potenciacion9.wav
+│   │           potenciacion10.wav
+│   │           potenciacion11.wav
+│   │           potenciacion12.wav
+│   │           potenciacion13.wav
+│   │           raizcuadrada1.wav
+│   │           raizcuadrada2.wav
+│   │           raizcuadrada3.wav
+│   │           raizcuadrada4.wav
+│   │           raizcuadrada5.wav
+│   │           raizcuadrada6.wav
+│   │           raizcuadrada7.wav
+│   │           raizcuadrada8.wav
+│   │           raizcuadrada9.wav
+│   │           raizcuadrada10.wav
+│   │           raizcuadrada11.wav
+│   │           raizcuadrada12.wav
+│   │           raizcuadrada13.wav
+│   │           resta1.wav
+│   │           resta2.wav
+│   │           resta3.wav
+│   │           resta4.wav
+│   │           resta5.wav
+│   │           resta6.wav
+│   │           resta7.wav
+│   │           resta8.wav
+│   │           resta9.wav
+│   │           resta10.wav
+│   │           resta11.wav
+│   │           resta12.wav
+│   │           resta13.wav
+│   │           suma1.wav
+│   │           suma2.wav
+│   │           suma3.wav
+│   │           suma4.wav
+│   │           suma5.wav
+│   │           suma6.wav
+│   │           suma7.wav
+│   │           suma8.wav
+│   │           suma9.wav
+│   │           suma10.wav
+│   │           suma11.wav
+│   │           suma12.wav
+│   │           suma13.wav
+│   │
+│   └───movements
+│       │   info.labels
+│       │   README.txt
+│       │
+│       ├───testing
+│       │       agitaraloslados1.json
+│       │       agitaraloslados2.json
+│       │       agitararribaabajo1.json
+│       │       agitararribaabajo2.json
+│       │       brincar1.json
+│       │       brincar2.json
+│       │       caminar1.json
+│       │       caminar2.json
+│       │       circulos1.json
+│       │       circulos2.json
+│       │       info.labels
+│       │       trotar1.json
+│       │       trotar2.json
+│       │
+│       └───training
+│               agitaraloslados1.json
+│               agitaraloslados2.json
+│               agitaraloslados3.json
+│               agitaraloslados4.json
+│               agitaraloslados5.json
+│               agitaraloslados6.json
+│               agitaraloslados7.json
+│               agitaraloslados8.json
+│               agitararribaabajo1.json
+│               agitararribaabajo2.json
+│               agitararribaabajo3.json
+│               agitararribaabajo4.json
+│               agitararribaabajo5.json
+│               agitararribaabajo6.json
+│               agitararribaabajo7.json
+│               agitararribaabajo8.json
+│               brincar1.json
+│               brincar2.json
+│               brincar3.json
+│               brincar4.json
+│               brincar5.json
+│               brincar6.json
+│               brincar7.json
+│               brincar8.json
+│               caminar1.json
+│               caminar2.json
+│               caminar3.json
+│               caminar4.json
+│               caminar5.json
+│               caminar6.json
+│               caminar7.json
+│               caminar8.json
+│               circulos1.json
+│               circulos2.json
+│               circulos3.json
+│               circulos4.json
+│               circulos5.json
+│               circulos6.json
+│               circulos7.json
+│               circulos8.json
+│               info.labels
+│               trotar1.json
+│               trotar2.json
+│               trotar3.json
+│               trotar4.json
+│               trotar5.json
+│               trotar6.json
+│               trotar7.json
+│               trotar8.json
+│
 ├───notebooks
-│ ├───pycache
-│ └───output_graphs
+│   │   audio_recognition.ipynb
+│   │   human_activity_recognition.ipynb
+│   │   rename_files.ipynb
+│   │   audio_recognition.py
+│   │   human_activity_recognition.py
+│   │
+│   ├───__pycache__
+│   │       utils.cpython-311.pyc
+│   │
+│   └───output_graphs
+│           sample_spectrogram.png
+│
 ├───output_audios
+│       division.wav
+│       multiplicacion.wav
+│       potenciacion.wav
+│       raizcuadrada.wav
+│       resta.wav
+│       suma.wav
+│
 └───output_graphs
+        agitaraloslados_accelerometer_signals.png
+        agitararribaabajo_accelerometer_signals.png
+        brincar_accelerometer_signals.png
+        caminar_accelerometer_signals.png
+        circulos_accelerometer_signals.png
+        trotar_accelerometer_signals.png
+        combined_accelerometer_signals.png
+        normalized_combined_accelerometer_signals.png
+        normalized_random_window_signals.png
+        mlp_training_loss.png
+        cnn_training_loss.png
+        rnn_training_loss.png
+        lstm_training_loss.png
+        sample_waveform.png
+        sample_spectrogram.png
 ```
 
 ## How to Run
