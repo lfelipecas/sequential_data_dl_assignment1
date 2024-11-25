@@ -1,0 +1,66 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Exclude specific Python files
+audio_recognition.py
+human_activity_recognition.py
+
+# Exclude specific Jupyter Notebook file
+rename_files.ipynb
+
+# Virtual environment
+env/
+venv/
+ENV/
+.venv/
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and debugging
+*.log
+*.out
+*.err
+
+# Model weights and checkpoints
+*.h5
+*.ckpt
+*.pth
+*.pb
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.old
+
+# Output directories
+images/
+visualizations/
+
+# HTML files generated for visualizations
+*.html
+
+# Large files or unnecessary files for versioning
+*.zip
+*.tar
+*.gz
+*.tgz
+
+# Sensitive information
+.env
+config.json
+secrets.json
