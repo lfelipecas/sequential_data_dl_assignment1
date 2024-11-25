@@ -343,18 +343,50 @@ To prepare accelerometer signals for training, a series of preprocessing steps w
 
 ## Conclusions
 
-1. **Human Activity Recognition**:
-   - CNNs performed best due to their ability to detect local patterns in accelerometer signals.
-   - RNN and LSTM models underperformed, possibly due to insufficient training or hyperparameter optimization for sequential data.
-   - The high accuracy of CNNs (97.22%) suggests they are well-suited for HAR tasks.
+The comparison of model performances across both tasks—Human Activity Recognition (HAR) and Audio Recognition—reveals several insights about the strengths and weaknesses of the models, as well as task-specific challenges.
 
-2. **Audio Recognition**:
-   - Treating audio as images (spectrograms) allowed CNNs to achieve near-perfect accuracy (97.1%).
-   - This approach is robust, as it captures both time and frequency-domain information effectively.
+### **Human Activity Recognition (HAR)**
 
-3. **Future Work**:
-   - Experiment with GRU or transformer-based architectures for HAR to improve temporal pattern recognition.
-   - Investigate ensemble methods combining CNNs and RNNs for audio tasks.
+1. **CNN's Dominance in Spatial Pattern Recognition**:
+   - The CNN consistently outperformed all other models, as shown in its near-perfect classification of activities like "agitar a los lados" and "caminar." Its convolutional layers effectively captured local spatial features in accelerometer signals. The confusion matrix further highlights its generalization ability, with minimal misclassifications compared to other models.
+
+2. **MLP's Limitations and Strengths**:
+   - While the MLP achieved respectable accuracy, it lacked the spatial awareness of CNNs, leading to notable misclassifications, particularly for "brincar" and "trotar." Its relatively flat structure limited its ability to learn the intricacies of the time-series data.
+
+3. **RNN and LSTM Struggles**:
+   - Both RNN and LSTM underperformed in HAR, which is surprising given their theoretical suitability for sequential data. The confusion matrices reveal frequent misclassifications, such as the inability to distinguish between "agitar a los lados" and "trotar." This could be attributed to insufficient long-term dependencies in the input data or hyperparameter configurations that failed to optimize temporal modeling.
+
+4. **Task-Specific Insights**:
+   - HAR required robust spatial feature extraction, which aligned well with CNNs. However, the temporal dependencies, expected to favor RNNs and LSTMs, were not effectively modeled. This highlights a need for better data preprocessing, such as larger sliding windows or feature engineering, to capitalize on the temporal structure.
+
+### **Audio Recognition**
+
+1. **Challenges of Audio Command Classification**:
+   - The confusion matrices reveal difficulties in distinguishing between acoustically similar commands like "suma" and "multiplicación." Both models struggled with certain classes, evidenced by zero precision and recall for commands such as "suma." This suggests overlapping acoustic features or insufficient training data for specific commands.
+
+2. **Model 1 vs. Model 2**:
+   - Despite being less complex, Model 1 outperformed Model 2 on the test set. The over-regularization in Model 2 (e.g., dropout and batch normalization) likely impeded its ability to generalize. This highlights the delicate balance between regularization and model capacity in audio classification tasks.
+
+3. **Impact of Spectrogram Representation**:
+   - The spectrogram preprocessing step was critical for CNN-based models, allowing the extraction of frequency-time patterns. However, resizing spectrograms to 128x128 pixels may have resulted in some loss of granularity, potentially affecting the performance of both models.
+
+4. **Task-Specific Challenges**:
+   - Unlike HAR, Audio Recognition posed additional challenges due to the inherent variability of spoken commands (e.g., accents, intonations). This variability was reflected in the lower performance metrics across both models.
+
+### **Comparative Analysis Across Tasks**
+
+1. **Architectural Suitability**:
+   - **CNNs** were the clear winners in HAR due to their spatial feature extraction capabilities. However, their performance in Audio Recognition was less impressive, suggesting that audio tasks might benefit from additional architectural enhancements, such as attention mechanisms or pre-trained embeddings.
+   - **MLP** provided a solid baseline for HAR but struggled with nuanced patterns in Audio Recognition, indicating its limitations in handling complex feature spaces.
+   - **RNNs and LSTMs**, theoretically suitable for both tasks, failed to capitalize on temporal dependencies in HAR and were not tested for Audio Recognition. Their poor performance highlights the need for further tuning and task-specific optimization.
+
+2. **Overfitting and Generalization**:
+   - In both tasks, simpler models like the MLP and Model 1 exhibited better generalization compared to their more complex counterparts. This reinforces the importance of balancing model complexity with task requirements and dataset size.
+
+3. **Confusion Matrix Insights**:
+   - The confusion matrices for HAR clearly show the CNN's ability to differentiate between activities, with almost no confusion. In contrast, the matrices for RNN and LSTM highlight significant overlap between classes, such as "trotar" being misclassified as "agitar a los lados."
+   - For Audio Recognition, both models struggled with certain commands (e.g., "suma"), suggesting a need for more representative training data or advanced augmentation techniques to capture class variability.
+
 
 ## Repository Structure
 ```
