@@ -384,7 +384,7 @@ The comparison of model performances across both tasks—Human Activity Recognit
    - In both tasks, simpler models like the MLP and Model 1 exhibited better generalization compared to their more complex counterparts. This reinforces the importance of balancing model complexity with task requirements and dataset size.
 
 3. **Confusion Matrix Insights**:
-   - The confusion matrices for HAR clearly show the CNN's ability to differentiate between activities, with almost no confusion. In contrast, the matrices for RNN and LSTM highlight significant overlap between classes, such as "trotar" being misclassified as "agitar a los lados."
+   - The confusion matrices for HAR clearly show the CNN's ability to differentiate between activities, with almost no confusion. In contrast, the matrices for RNN and LSTM highlight significant overlap between classes, such as "trotar" being misclassified as "agitar a los lados", "agitar a los lados", "agitar arriba y abajo", "brincar", "caminar" y "circulos". 
    - For Audio Recognition, both models struggled with certain commands (e.g., "suma"), suggesting a need for more representative training data or advanced augmentation techniques to capture class variability.
 
 
