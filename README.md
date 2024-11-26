@@ -572,18 +572,9 @@ The comparison of model performances across both tasks—Human Activity Recognit
 │               trotar8.json
 │
 ├───notebooks
-│   │   audio_recognition.ipynb
-│   │   human_activity_recognition.ipynb
-│   │   rename_files.ipynb
-│   │   audio_recognition.py
-│   │   human_activity_recognition.py
-│   │
-│   ├───__pycache__
-│   │       utils.cpython-311.pyc
-│   │
-│   └───output_graphs
-│           sample_spectrogram.png
-│
+│       audio_recognition.ipynb
+│       human_activity_recognition.ipynb
+│       
 ├───output_audios
 │       division.wav
 │       multiplicacion.wav
