@@ -15,15 +15,15 @@
 
 ## Introduction
 
-In recent years, the rapid advancements in deep learning and artificial intelligence have enabled innovative solutions to traditionally complex problems. This repository showcases an exploration of two pivotal tasks: **Audio Recognition** and **Human Activity Recognition (HAR)**, both of which leverage neural network architectures and data preprocessing techniques.
+In recent years, the rapid advancements in deep learning and artificial intelligence have enabled innovative solutions to traditionally complex problems. This repository showcases an exploration of two tasks: **Audio Recognition** and **Human Activity Recognition (HAR)**, both of which leverage neural network architectures and data preprocessing techniques.
 
 ### Audio Recognition
-The goal of the audio recognition system is to classify different **mathematical operations**—such as addition, subtraction, and multiplication—based on short audio recordings. This problem finds real-world applications in voice-based educational tools, assistive technologies, and intelligent tutoring systems. By transforming raw audio signals into spectrograms, the system effectively captures time-frequency characteristics of the input, enabling robust classification using deep neural networks.
+The goal of the audio recognition system is to classify different **mathematical operations** such as addition, subtraction and multiplication, based on short audio recordings. This problem finds real-world applications in voice-based educational tools, assistive technologies, and intelligent tutoring systems. By transforming raw audio signals into spectrograms, the system effectively captures time-frequency characteristics of the input, enabling robust classification using deep neural networks.
 
 ### Human Activity Recognition (HAR)
-The HAR task focuses on recognizing various human physical activities—such as jogging, walking, and jumping—using time-series data from accelerometers. Applications of HAR range from fitness tracking and healthcare monitoring to gesture recognition in human-computer interaction systems. Our solution processes accelerometer signals into structured input formats and employs advanced neural architectures to achieve highly accurate predictions.
+The HAR task focuses on recognizing various human physical activities such as jogging, walking, and jumping, using time series data from accelerometers. Applications of HAR range from fitness tracking and healthcare monitoring to gesture recognition in human-computer interaction systems. Our solution processes accelerometer signals into structured input formats and employs advanced neural architectures to achieve highly accurate predictions.
 
-This repository combines theoretical depth and practical implementation to solve these challenges. The project is designed to be a complete workflow, from raw data collection to model training and evaluation, offering a hands-on demonstration of deep learning's power and versatility. Furthermore, we provide detailed explanations of the data preprocessing steps, neural network architectures, and experimental results to facilitate learning and reproducibility.
+This repository combines theoretical and practical implementation to solve these problems. The project is designed to be a complete workflow, from raw data collection to model training and evaluation, offering a hands-on demonstration of deep learning's power and versatility. Furthermore, it provides detailed explanations of the data preprocessing steps, neural network architectures, and experimental results to facilitate learning and reproducibility.
 
 By the end of this document, you will find:  
 - Detailed explanations of the preprocessing and modeling techniques applied to audio recognition and HAR tasks.  
@@ -42,7 +42,7 @@ Human Activity Recognition (HAR) involves the automatic identification of human 
 ### Deep Learning in Audio Recognition
 
 Audio recognition leverages the properties of sound signals, such as frequency and amplitude, to classify or understand audio content. In this project, the audio data is transformed into **spectrograms**, which convert sound into 2D visual representations that encode time on one axis and frequency on the other. This enables the use of image-based deep learning models:  
-- **Convolutional Neural Networks (CNNs)**: By treating spectrograms as images, CNNs can extract spatial patterns, such as variations in pitch and intensity, which are critical for distinguishing different audio commands.  
+- **Convolutional Neural Networks (CNNs)**: By treating spectrograms as images, CNNs can extract spatial patterns, such as variations in pitch and intensity, which are critical for distinguishing different audio commands.
 
 ### Neural Network Architectures
 
@@ -267,7 +267,7 @@ To prepare accelerometer signals for training, a series of preprocessing steps w
 | **Macro Average**       | 0.26          | 0.40       | 0.28         | 72          |
 | **Weighted Average**    | 0.26          | 0.40       | 0.28         | 72          |
 
-![CNN Confusion Matrix](output_graphs/cnn_confusion_matrix.png)
+![RNN Confusion Matrix](output_graphs/rnn_confusion_matrix.png)
 
 - **LSTM**: 33.33% Accuracy, Loss = 1.4949
 
